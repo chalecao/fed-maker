@@ -1,0 +1,16 @@
+.git
+.gitignore
+.idea
+build-conf
+docs
+node_modules
+src-client
+src-server
+spkgs
+test
+structor.iml
+structor-logo-big.png
+structor-commons
+structor-market
+structor-meta
+demo

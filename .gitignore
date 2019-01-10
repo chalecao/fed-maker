@@ -1,0 +1,10 @@
+node_modules
+npm-debug.log
+test
+demo
+spkgs
+structor-commons
+structor-market
+structor-meta
+src-client
+src-server
