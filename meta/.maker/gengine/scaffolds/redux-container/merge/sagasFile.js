@@ -9,7 +9,7 @@ var _path = require('path');
 
 var _path2 = _interopRequireDefault(_path);
 
-var _structorCommons = require('structor-commons');
+var _utils = require('fed-maker/server/utils');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30,10 +30,10 @@ function getFile(dataObject, dependencies) {
     var sourceCode = void 0;
     if (namespace && namespace.length > 0) {
         reducerFilePath = _path2.default.join('modules', namespace, 'sagas.js').replace(/\\/g, '/');
-        sourceCode = _structorCommons.gengine.injectModuleSaga(index.sagasSourceCode, namespace + 'Sagas', reducerFilePath);
+        sourceCode = _utils.gengine.injectModuleSaga(index.sagasSourceCode, namespace + 'Sagas', reducerFilePath);
     } else {
         reducerFilePath = _path2.default.join('containers', componentName, 'sagas.js').replace(/\\/g, '/');
-        sourceCode = _structorCommons.gengine.injectSaga(index.sagasSourceCode, componentName + 'Sagas', reducerFilePath);
+        sourceCode = _utils.gengine.injectSaga(index.sagasSourceCode, componentName + 'Sagas', reducerFilePath);
     }
 
     return {

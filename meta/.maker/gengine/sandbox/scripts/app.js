@@ -11,7 +11,7 @@ var _path = require('path');
 
 var _path2 = _interopRequireDefault(_path);
 
-var _structorCommons = require('structor-commons');
+var _utils = require('fed-maker/server/utils');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -25,9 +25,9 @@ function getFile(dataObject, templateText) {
         throw Error('Wrong project configuration. \'sandboxDirPath\' field is missing.');
     }
 
-    var srcModel = _structorCommons.gengine.combineAllModulesComponents(index, namespaces);
+    var srcModel = _utils.gengine.combineAllModulesComponents(index, namespaces);
 
-    var _gengine$prepareModel = _structorCommons.gengine.prepareModelWithImports(index, srcModel),
+    var _gengine$prepareModel = _utils.gengine.prepareModelWithImports(index, srcModel),
         imports = _gengine$prepareModel.imports,
         model = _gengine$prepareModel.model;
 
@@ -45,7 +45,7 @@ function getFile(dataObject, templateText) {
     }
 
     try {
-        resultSource = _structorCommons.commons.formatJs(resultSource);
+        resultSource = _utils.commons.formatJs(resultSource);
         resultSource = resultSource.replace(/(^\s*[\r\n]){2,}/gm, "\n");
     } catch (e) {
         throw Error('JavaScript syntax error. ' + e + '\n[Source code:]\n' + resultSource);

@@ -11,7 +11,7 @@ var _path2 = _interopRequireDefault(_path);
 
 var _lodash = require('lodash');
 
-var _structorCommons = require('structor-commons');
+var _utils = require('fed-maker/server/utils');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26,15 +26,15 @@ function getFile(dataObject, dependencies) {
 
     var sourceCode = void 0;
     if (index && index.indexFilePath && index.indexSourceCode) {
-        var ast = _structorCommons.commons.parse(index.indexSourceCode);
+        var ast = _utils.commons.parse(index.indexSourceCode);
         if (namespace && namespace.length > 0) {
-            ast = _structorCommons.commons.addNamespaceImport(ast, namespace, _path2.default.join('modules', namespace).replace(/\\/g, '/'));
-            ast = _structorCommons.commons.addNamedExport(ast, namespace);
+            ast = _utils.commons.addNamespaceImport(ast, namespace, _path2.default.join('modules', namespace).replace(/\\/g, '/'));
+            ast = _utils.commons.addNamedExport(ast, namespace);
         } else {
-            ast = _structorCommons.commons.addDefaultImport(ast, componentName, _path2.default.join('components', componentName).replace(/\\/g, '/'));
-            ast = _structorCommons.commons.addNamedExport(ast, componentName);
+            ast = _utils.commons.addDefaultImport(ast, componentName, _path2.default.join('components', componentName).replace(/\\/g, '/'));
+            ast = _utils.commons.addNamedExport(ast, componentName);
         }
-        sourceCode = _structorCommons.commons.generate(ast);
+        sourceCode = _utils.commons.generate(ast);
     } else {
         throw Error('Components index file was not found.');
     }

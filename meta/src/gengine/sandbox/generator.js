@@ -1,6 +1,6 @@
 import path from 'path';
 import {cloneDeep, template, isObject, isArray} from 'lodash';
-import {commons} from 'fed-maker/server/structor-commons';
+import {commons} from 'fed-maker/server/utils';
 import metadata from './metadata.js';
 import dependencies from './dependencies.js';
 

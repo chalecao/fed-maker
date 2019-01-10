@@ -11,7 +11,7 @@ var _path2 = _interopRequireDefault(_path);
 
 var _lodash = require('lodash');
 
-var _structorCommons = require('structor-commons');
+var _utils = require('fed-maker/server/utils');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -40,10 +40,10 @@ function getFile(dataObject, dependencies) {
         var outputFilePath = void 0;
         if (module) {
             if (module.indexFilePath && module.indexSourceCode) {
-                var ast = _structorCommons.commons.parse(module.indexSourceCode);
-                ast = _structorCommons.commons.addDefaultImport(ast, componentName, relativeFilePath);
-                ast = _structorCommons.commons.addNamedExport(ast, componentName);
-                sourceCode = _structorCommons.commons.generate(ast);
+                var ast = _utils.commons.parse(module.indexSourceCode);
+                ast = _utils.commons.addDefaultImport(ast, componentName, relativeFilePath);
+                ast = _utils.commons.addNamedExport(ast, componentName);
+                sourceCode = _utils.commons.generate(ast);
                 outputFilePath = module.indexFilePath;
             } else {
                 throw Error('Module components index file was not found.');

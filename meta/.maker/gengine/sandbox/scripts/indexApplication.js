@@ -11,7 +11,7 @@ var _path = require('path');
 
 var _path2 = _interopRequireDefault(_path);
 
-var _structorCommons = require('structor-commons');
+var _utils = require('fed-maker/server/utils');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36,7 +36,7 @@ function getFile(dataObject, templateText) {
 	}
 
 	try {
-		resultSource = _structorCommons.commons.formatJs(resultSource);
+		resultSource = _utils.commons.formatJs(resultSource);
 		resultSource = resultSource.replace(/(^\s*[\r\n]){2,}/gm, "\n");
 	} catch (e) {
 		throw Error('JavaScript syntax error. ' + e + '\n[Source code:]\n' + resultSource);

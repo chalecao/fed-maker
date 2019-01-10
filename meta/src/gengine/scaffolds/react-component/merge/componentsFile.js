@@ -1,6 +1,6 @@
 import path from 'path';
 import {has, get, camelCase, findIndex} from 'lodash';
-import {commons} from 'fed-maker/server/structor-commons';
+import {commons} from 'fed-maker/server/utils';
 
 export function getFile(dataObject, dependencies){
 

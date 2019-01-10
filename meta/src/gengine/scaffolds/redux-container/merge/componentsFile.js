@@ -1,5 +1,5 @@
 import path from 'path';
-import {gengine} from 'fed-maker/server/structor-commons';
+import {gengine} from 'fed-maker/server/utils';
 
 export function getFile(dataObject, dependencies){
 

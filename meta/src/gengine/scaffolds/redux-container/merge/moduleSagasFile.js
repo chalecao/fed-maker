@@ -1,6 +1,6 @@
 import path from 'path';
 import {has} from 'lodash';
-import {gengine} from 'fed-maker/server/structor-commons';
+import {gengine} from 'fed-maker/server/utils';
 
 const sagasTemplate = (importName, relativeFilePath) => {
     const result =

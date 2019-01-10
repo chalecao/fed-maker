@@ -12,7 +12,7 @@ var _path2 = _interopRequireDefault(_path);
 
 var _lodash = require('lodash');
 
-var _structorCommons = require('structor-commons');
+var _utils = require('fed-maker/server/utils');
 
 var _metadata = require('./metadata.js');
 
@@ -40,7 +40,7 @@ function process(currentDir, dataObject) {
 	var templateReaders = [];
 
 	templateNames.forEach(function (name) {
-		templateReaders.push(_structorCommons.commons.readFile(_path2.default.join(currentDir, 'templates', name + '.tpl')).then(function (fileData) {
+		templateReaders.push(_utils.commons.readFile(_path2.default.join(currentDir, 'templates', name + '.tpl')).then(function (fileData) {
 			templateDatas[name] = fileData;
 		}));
 	});

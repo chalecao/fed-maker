@@ -11,7 +11,7 @@ var _path2 = _interopRequireDefault(_path);
 
 var _lodash = require('lodash');
 
-var _structorCommons = require('structor-commons');
+var _utils = require('fed-maker/server/utils');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -39,7 +39,7 @@ function getFile(dataObject, dependencies) {
         var relativeFilePath = './' + _path2.default.join('containers', componentName, 'reducer.js').replace(/\\/g, '/');
         var outputFilePath = void 0;
         if (module && module.reducerFilePath && module.reducerSourceCode) {
-            sourceCode = _structorCommons.gengine.injectModuleReducer(module.reducerSourceCode, metadata.reducerKeyProperty, metadata.reducerKeyProperty + 'Reducer', relativeFilePath);
+            sourceCode = _utils.gengine.injectModuleReducer(module.reducerSourceCode, metadata.reducerKeyProperty, metadata.reducerKeyProperty + 'Reducer', relativeFilePath);
             outputFilePath = module.reducerFilePath;
         } else {
             sourceCode = reducerTemplate(metadata.reducerKeyProperty, metadata.reducerKeyProperty + 'Reducer', relativeFilePath);

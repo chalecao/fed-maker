@@ -11,7 +11,7 @@ var _path = require('path');
 
 var _path2 = _interopRequireDefault(_path);
 
-var _structorCommons = require('structor-commons');
+var _utils = require('fed-maker/server/utils');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28,11 +28,11 @@ function getFile(dataObject, templateText) {
         throw Error('Wrong project configuration. \'appDirPath\' field is missing.');
     }
 
-    var _gengine$prepareModel = _structorCommons.gengine.prepareModelWithImports(index, srcModel, namespace),
+    var _gengine$prepareModel = _utils.gengine.prepareModelWithImports(index, srcModel, namespace),
         imports = _gengine$prepareModel.imports,
         srcModel1 = _gengine$prepareModel.model;
 
-    var _gengine$prepareModel2 = _structorCommons.gengine.prepareModelWithObjects(srcModel1),
+    var _gengine$prepareModel2 = _utils.gengine.prepareModelWithObjects(srcModel1),
         foundObjects = _gengine$prepareModel2.foundObjects,
         model = _gengine$prepareModel2.model;
 
@@ -52,7 +52,7 @@ function getFile(dataObject, templateText) {
     }
 
     try {
-        resultSource = _structorCommons.commons.formatJs(resultSource);
+        resultSource = _utils.commons.formatJs(resultSource);
         resultSource = resultSource.replace(/(^\s*[\r\n]){2,}/gm, "\n");
     } catch (e) {
         throw Error('JavaScript syntax error. ' + e + '\n[Source code:]\n' + resultSource);

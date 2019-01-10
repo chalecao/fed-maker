@@ -1,6 +1,6 @@
 import {template, has} from 'lodash';
 import path from 'path';
-import {commons} from 'fed-maker/server/structor-commons';
+import {commons} from 'fed-maker/server/utils';
 
 export function getFile(dataObject, templateText){
 
