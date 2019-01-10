@@ -62,20 +62,20 @@ if (process.env.npm_config_global) {
 			let packageVersion = process.env.npm_package_version;
 			let appDirPath = ""
 			let packageFileName = ""
-			if (packageVersion) {
-				const versionParts = packageVersion.split('-');
-				let packageFileName = packageVersion + META_REPO_ARCHIVE_EXT;
-				if (versionParts.length > 1) {
-					packageFileName = versionParts[1] + META_REPO_ARCHIVE_EXT;
-				}
-				appDirPath = path.resolve(currentDir, '../..');
-			} else {
-				META_REPO_ARCHIVE_URL = currentDir
-				let package = require(path.resolve(currentDir, 'package.json'))
-				packageVersion = package.version;
-				packageFileName = META_REPO_NAME;
-				appDirPath = process.cwd();
-			}
+			// if (packageVersion) {
+			// 	const versionParts = packageVersion.split('-');
+			// 	let packageFileName = packageVersion + META_REPO_ARCHIVE_EXT;
+			// 	if (versionParts.length > 1) {
+			// 		packageFileName = versionParts[1] + META_REPO_ARCHIVE_EXT;
+			// 	}
+			// 	appDirPath = path.resolve(currentDir, '../..');
+			// } else {
+			META_REPO_ARCHIVE_URL = currentDir
+			let package = require(path.resolve(currentDir, 'package.json'))
+			packageVersion = package.version;
+			packageFileName = META_REPO_NAME;
+			appDirPath = process.cwd();
+			// }
 			console.log(appDirPath, packageVersion)
 
 			downloadController.checkMetaFolderVersion(appDirPath, packageVersion)
