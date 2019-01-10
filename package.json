@@ -1,6 +1,6 @@
 {
   "name": "fed-maker",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "fed-maker - UI maker, build and manage any ui",
   "main": "maker.js",
   "scripts": {
