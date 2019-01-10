@@ -11,11 +11,11 @@ module.exports = (options) => ({
 		'react-hot-loader/patch',
 		'eventsource-polyfill', // Necessary for hot reloading with IE
 		'webpack-hot-middleware/client?path=/structor-dev/a&timeout=2000&overlay=false&noInfo=true',
-		path.join(process.cwd(), '.structor/src/default.js'), // Start
+		path.join(process.cwd(), '.maker/src/default.js'), // Start
 	],
 
 	output: {
-		path: path.join(process.cwd(), '.structor/desk/__build__'),
+		path: path.join(process.cwd(), '.maker/desk/__build__'),
 		filename: 'bundle.js',
 		publicPath: '/structor-dev/__build__',
 	},
