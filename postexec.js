@@ -49,7 +49,6 @@ try {
 } catch (e) {
 	// do nothing;
 }
-console.log("log: ", process.env.npm_config_global)
 
 if (process.env.npm_config_global) {
 	console.error('Structor must be installed locally.');
@@ -74,7 +73,11 @@ if (process.env.npm_config_global) {
 			let package = require(path.resolve(currentDir, 'package.json'))
 			packageVersion = package.version;
 			packageFileName = META_REPO_NAME;
+			
 			appDirPath = process.cwd();
+			if (appDirPath.match(NODE_DIR_NAME)) {
+				appDirPath = path.resolve(appDirPath, '../..');
+			}
 			// }
 			console.log(appDirPath, packageVersion)
 

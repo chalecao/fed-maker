@@ -2,7 +2,6 @@
 .gitignore
 .idea
 build-conf
-docs
 node_modules
 src-client
 src-server
